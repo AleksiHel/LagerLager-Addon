@@ -1,0 +1,9 @@
+## Interface: 30400
+## Title: LagerLager
+## Notes: LagerLager addon
+## Version: 0.1
+## Author: Jaamon
+## SavedVariables: LagerLagerDB
+## SavedVariablesPerCharacter: LagerLagerDBchar
+
+LagerLager.lua
