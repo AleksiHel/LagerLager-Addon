@@ -15,6 +15,4 @@ Add one case for the player \
 **!lagerlager delete 'playername'**\
 removes one case from the player\
 **!lagerlager top**\
-prints top 5\\
-
-My first time working with lua.
+prints top 5\
