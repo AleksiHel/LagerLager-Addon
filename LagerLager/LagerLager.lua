@@ -1,7 +1,10 @@
 
 -- change here for admin
 local admin = {
-    ["Epoju"] = true, ["Jaamon"] = true
+    ["Jazaa"] = true,
+    ["Jazho"] = true,
+    ["Jazvo"] = true,
+    ["Jazsu"] = true
 }
 
 -- addon commands
@@ -26,57 +29,10 @@ function frame:PLAYER_LOGIN()
     print("LagerLager loaded!")
 end
 
-function frame:ADDON_LOADED()
 
-    -- first time load not working properly
-    -- adds guild to the saved variables
-        if LagerLagerDB == nil then
-            LagerLagerDB = {}
-            LagerLagerDB["Jazaa"] = 0
-            LagerLagerDB["Eliah"] = 0
-            LagerLagerDB["Ikeris"] = 0
-            LagerLagerDB["Keppi"] = 0
-            LagerLagerDB["Muilu"] = 0
-            LagerLagerDB["Rarre"] = 0
-            LagerLagerDB["Sammana"] = 0
-            LagerLagerDB["Ava"] = 0
-            LagerLagerDB["Betoni"] = 0
-            LagerLagerDB["Bigzzy"] = 0
-            LagerLagerDB["Bulli"] = 0
-            LagerLagerDB["Frace"] = 0
-            LagerLagerDB["Fuutonje"] = 0
-            LagerLagerDB["Jaamon"] = 0
-            LagerLagerDB["Jatsor"] = 0
-            LagerLagerDB["Lidyo"] = 0
-            LagerLagerDB["Marsu"] = 0
-            LagerLagerDB["Mehu"] = 0
-            LagerLagerDB["Nässy"] = 0
-            LagerLagerDB["Gilwin"] = 0
-            LagerLagerDB["Sipuli"] = 0
-            LagerLagerDB["Snajder"] = 0
-            LagerLagerDB["Tattipappi"] = 0
-            LagerLagerDB["Viljami"] = 0
-            LagerLagerDB["Yentil"] = 0
-            LagerLagerDB["Zaela"] = 0
-            LagerLagerDB["Bahis"] = 0
-            LagerLagerDB["Gosujumala"] = 0
-            LagerLagerDB["Jope"] = 0
-            LagerLagerDB["Neponaattori"] = 0
-            LagerLagerDB["Sonats"] = 0
-            LagerLagerDB["Sotkaz"] = 0
-            LagerLagerDB["Stankvag"] = 0
-            LagerLagerDB["Sylvi"] = 0
-            LagerLagerDB["Sähköjohto"] = 0
-            LagerLagerDB["Munahaukka"] = 0
-            LagerLagerDB["Plive"] = 0
-            LagerLagerDB["Parru"] = 0
-            LagerLagerDB["Halleballe"] = 0
-            LagerLagerDB["Bere"] = 0
-        end
-    end
 
 -- function to get guild chat messages
-function frame:CHAT_MSG_GUILD(event, message, sender, language, channelString, target, flags, unknown, channelNumber,
+function frame:CHAT_MSG_GUILD(message, sender, language, channelString, target, flags, unknown, channelNumber,
                               channelName, unknown, counter, guid)
     local player = string.match(message, "!lagerlager (.+)")
 
@@ -86,8 +42,7 @@ function frame:CHAT_MSG_GUILD(event, message, sender, language, channelString, t
 
         -- basic logic is that checks if the message sender is Admin. If not skip the first if but if it is admin checks if trying to use top or status
         --checks if it's the admin's command or not
-        if (admin["Epoju"] or admin["Jaamon"]) and string.find(player, "top") == nil and
-            string.find(player, "status") == nil then
+        if admin[msgSender] == true and string.find(player, "top") == nil and string.find(player, "status") == nil then
 
             -- adds points to the player
             if LagerLagerDB[player] ~= nil then
@@ -182,3 +137,53 @@ end
 function trim_letters(s)
     return string.gsub(s, "%a", "")
 end
+
+function frame:ADDON_LOADED()
+    -- first time load
+    -- adds guild to the saved variables
+        if LagerLagerDB == nil then
+            LagerLagerDB = {}
+            LagerLagerDB["Jazaa"] = 0
+            LagerLagerDB["Eliah"] = 0
+            LagerLagerDB["Ikeris"] = 0
+            LagerLagerDB["Keppi"] = 0
+            LagerLagerDB["Muilu"] = 0
+            LagerLagerDB["Rarre"] = 0
+            LagerLagerDB["Sammana"] = -1
+            LagerLagerDB["Ava"] = 0
+            LagerLagerDB["Betoni"] = 0
+            LagerLagerDB["Bigzzy"] = 0
+            LagerLagerDB["Bulli"] = 0
+            LagerLagerDB["Frace"] = 0
+            LagerLagerDB["Fuutonje"] = 0
+            LagerLagerDB["Jaamon"] = -1
+            LagerLagerDB["Jatsor"] = 0
+            LagerLagerDB["Lidyo"] = 0
+            LagerLagerDB["Marsu"] = 0
+            LagerLagerDB["Mehu"] = 0
+            LagerLagerDB["Nässy"] = 0
+            LagerLagerDB["Gilwin"] = 0
+            LagerLagerDB["Sipuli"] = 0
+            LagerLagerDB["Snajder"] = 0
+            LagerLagerDB["Tattipappi"] = 0
+            LagerLagerDB["Viljami"] = 0
+            LagerLagerDB["Yentil"] = 0
+            LagerLagerDB["Zaela"] = 0
+            LagerLagerDB["Bahis"] = 0
+            LagerLagerDB["Gosujumala"] = 0
+            LagerLagerDB["Jope"] = 0
+            LagerLagerDB["Neponaattori"] = 0
+            LagerLagerDB["Sonats"] = 0
+            LagerLagerDB["Sotkaz"] = 0
+            LagerLagerDB["Stankvag"] = 0
+            LagerLagerDB["Sylvi"] = 0
+            LagerLagerDB["Sähköjohto"] = 0
+            LagerLagerDB["Munahaukka"] = 0
+            LagerLagerDB["Plive"] = 0
+            LagerLagerDB["Parru"] = 0
+            LagerLagerDB["Halleballe"] = 0
+            LagerLagerDB["Bere"] = 0
+            LagerLagerDB["Bouneri"] = 0
+
+        end
+    end
