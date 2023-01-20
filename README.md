@@ -15,4 +15,4 @@ Add one case for the player \
 **!lagerlager delete 'playername'**\
 removes one case from the player\
 **!lagerlager top**\
-prints top 5\
+prints top 5
