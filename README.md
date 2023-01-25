@@ -9,7 +9,7 @@ It's designated that only one people uses it. He is the admin and can add or rem
 
 ### Commands
 **!lagerlager status 'playername'** \
-Show player's owed cases \
+Show players owed cases \
 **!lagerlager 'playername'**\
 Add one case for the player \
 **!lagerlager delete 'playername'**\
