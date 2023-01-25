@@ -9,9 +9,9 @@ It's designated that only one people uses it. He is the admin and can add or rem
 
 ### Commands
 **!lagerlager status 'playername'** \
-Show players owed cases \
+Shows how many cases player owes \
 **!lagerlager 'playername'**\
-Add one case for the player \
+Add one case for the player\
 **!lagerlager delete 'playername'**\
 removes one case from the player\
 **!lagerlager top**\
